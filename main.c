@@ -3,6 +3,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <time.h>
+#include <fcntl.h>
 
 
 int main() {
@@ -22,7 +23,8 @@ int main() {
 
   printf("Printing permissions: \n"); 
   int mode = ab.st_mode;
-  printf("Permissions: %d\n\n", mode);
+  //NOTE %o NOT %d
+  printf("Permissions: %o\n\n", mode);
 
   printf("Printing time: \n"); 
   long * time = &ab.st_mtime; 
